@@ -1,82 +1,82 @@
-/* reset de espaços em todo codigo */
-*{
+/* Reset de espaços */
+* {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-body{
+body {
     background-color: rgb(202, 202, 202);
 }
 
-nav{
+nav {
     background-color: rgb(128, 128, 128);
     width: 100%;
     position: fixed;
     top: 0;
-    
 }
 
-ul{
+ul {
     display: flex;
     justify-content: space-around;
     list-style: none;
-    padding: 10px 0px;
+    padding: 10px 0;
+    flex-wrap: wrap;
 }
 
-nav ul li a{
+nav ul li a {
     color: white;
     text-decoration: none;
 }
 
-.inicio{
-    height:100px;
-    margin-top: 50px;
-    text-align: center;
-    
-}
-
-.sobre{
-    font-size: large;
+.inicio {
     height: 100px;
-    margin-top: 20px;
+    margin-top: 60px;
     text-align: center;
-    line-height: 1.4
 }
 
-
-.cards {
-    margin-top: 160px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 20px;
-    gap: 18px;
-    width: 25%;
-    padding: 20px;
-    background-color: rgb(128, 128, 128);
-    box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
-}
-
-.titulo{
-    font-size: 24px;
-    font-weight: bold;
-    color: #000;
-}
-
-.img{
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
+.sobre {
+    font-size: large;
+    height: auto;
+    margin: 20px;
+    text-align: center;
+    line-height: 1.4;
 }
 
 #card {
     width: 100%;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 24px;
     margin-top: 32px;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    gap: 18px;
+    width: 25%;
+    min-width: 250px;
+    padding: 20px;
+    background-color: rgb(128, 128, 128);
+    box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
+}
+
+.titulo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+}
+
+.img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
 }
 
 .descricao {
@@ -92,7 +92,45 @@ footer {
     margin-top: 40px;
 }
 
-a{
+a {
     text-decoration: none;
     color: white;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .cards {
+        width: 40%;
+    }
+}
+
+@media (max-width: 768px) {
+    ul {
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .cards {
+        width: 80%;
+    }
+
+    .inicio {
+        margin-top: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .cards {
+        width: 90%;
+    }
+
+    .inicio {
+        margin-top: 100px;
+    }
 }
